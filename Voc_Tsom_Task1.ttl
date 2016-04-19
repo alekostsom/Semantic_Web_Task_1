@@ -1,0 +1,39 @@
+@prefix tsomVoc: <http://dilab77.ionio.gr/swp/tsompolis/vocab#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+tsomVoc:Lecture rdf:type rdfs:Class.
+tsomVoc:Room a rdfs:Class.
+tsomVoc:Course a rdfs:Class.
+tsomVoc:Teacher rdfs:subClassOf foaf:Person.
+
+tsomVoc:starts_at rdf:type rdf:Property.
+tsomVoc:starts_at rdfs:domain tsomVoc:Lecture.
+tsomVoc:starts_at rdfs:range xsd:time.
+
+tsomVoc:ends_at a rdf:Property.
+tsomVoc:ends_at rdfs:domain tsomVoc:Lecture.
+tsomVoc:ends_at rdfs:range xsd:time.
+
+tsomVoc:teaches a rdf:Property.
+tsomVoc:teaches rdfs:domain tsomVoc:Teacher.
+tsomVoc:teaches rdfs:range tsomVoc:Lecture.
+
+tsomVoc:takes_place_every a rdf:Property.
+tsomVoc:takes_place_every rdfs:domain tsomVoc:Lecture.
+tsomVoc:takes_place_every rdfs:range xsd:string.
+
+tsomVoc:has_title a rdf:Property.
+tsomVoc:has_title rdfs:domain tsomVoc:Lecture.
+tsomVoc:has_title rdfs:range tsomVoc:Course.
+
+tsomVoc:takes_place_at a rdf:Property.
+tsomVoc:takes_place_at rdfs:domain tsomVoc:Lecture.
+tsomVoc:takes_place_at rdfs:range tsomVoc:Room.
+
+tsomVoc:of_semester a rdf:Property.
+tsomVoc:of_semester rdfs:domain tsomVoc:Lecture.
+tsomVoc:of_semester rdfs:range xsd:string.
+
